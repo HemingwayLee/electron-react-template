@@ -20,8 +20,13 @@ jobs:
       - name: install packages
         run: npm install
       - name: Publish release
-        run: |
-          echo ${GH_TOKEN}
-          npm run build
+        run: npm run build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check artifacts
+        run: ls /home/runner/work/electron-react-template/electron-react-template/dist
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: my-artifact
+      #     path: path/to/artifact/world.txt
+  
