@@ -1,0 +1,21 @@
+name: Publish Docker image
+on:
+  # it will be triggered by release
+  #  release is based on tag
+  release:
+    types: [published]
+jobs:
+  publish_package:
+    name: Publish electron package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: show ls and pwd
+        run: |
+          ls
+          pwd
+      - run: npm install
+      - run: npm run build
