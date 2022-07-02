@@ -17,6 +17,11 @@ jobs:
         run: |
           ls
           pwd
-      - run: export GH_TOKEN="my_first_access_token"
-      - run: npm install
-      - run: npm run build
+      - name: install packages
+        run: npm install
+      - name: Publish release
+        run: |
+          echo ${GH_TOKEN}
+          npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
