@@ -11,3 +11,5 @@ npm run build
 open dist/
 ```
 
+# Where is build artifacts
+* actions -> click release 
