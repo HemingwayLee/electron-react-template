@@ -1,8 +1,13 @@
 # How
-* how to run
+* how to run (show electron app)
 ```
-npm install
+npm install .
 npm run dev
+```
+
+* how to run with browser
+```
+npm run start
 ```
 
 * how to release
